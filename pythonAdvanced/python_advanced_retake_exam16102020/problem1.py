@@ -2,8 +2,8 @@
 males = [int(i) for i in input().split(" ")]
 females = [int(i) for i in input().split(" ")]
 
-males = [m for m in males if m > 0]
-females = [f for f in females if f > 0]
+males = [m for m in males if m > 0 and m%25 != 0]
+females = [f for f in females if f > 0 and f%25 != 0]
 
 males = males[::-1]
 match_count = 0
