@@ -1,7 +1,7 @@
 message = input()
 
 command = input()
-message = list(message)
+# message = list(message)
 while command != "Decode":
     tokens = command.split("|")
 
@@ -11,15 +11,13 @@ while command != "Decode":
 
     elif tokens[0] == "Insert":
         index, value = int(tokens[1]), tokens[2]
-        message.insert(index, value)
+        message = message[0:index] + value + message[index:]
 
     elif tokens[0] == "ChangeAll":
         substring, replacement = tokens[1], tokens[2]
-        message = "".join(message)
         message = message.replace(substring, replacement)
-        message = list(message)
 
     command = input()
 
-print(f"The decrypted message is: {''.join(message)}")
+print(f"The decrypted message is: {message}")
 
